@@ -29,7 +29,7 @@ export const CLIENTS = [
     name: "Hispanos On The Road",
     category: "PRODUCCIÓN AUDIOVISUAL",
     description: "Conceptualización, grabación y edición de videos y fotografía para comunicar la esencia de la marca con alto impacto visual.",
-    cover: "/img/banners/banner-HOTR.png",
+    cover: "/img/banners/banner-hotr.png",
     pdfUrl: "/pdfs/manual-hots.pdf"
   },
 ];
