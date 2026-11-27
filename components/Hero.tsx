@@ -9,15 +9,13 @@ import { useLanguage } from "./LanguageContext";
 export default function Hero() {
   const textRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const { t } = useLanguage(); // <-- Hook de idioma
+  const { t } = useLanguage();
 
   useEffect(() => {
     gsap.fromTo(textRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1.5, ease: "power4.out", delay: 2.5 });
-
     const handleScroll = () => {
       if (videoRef.current) {
-        const scrollY = window.scrollY;
-        videoRef.current.style.transform = `translateY(${scrollY * 0.3}px)`;
+        videoRef.current.style.transform = `translateY(${window.scrollY * 0.3}px)`;
       }
     };
     window.addEventListener("scroll", handleScroll);
@@ -30,28 +28,35 @@ export default function Hero() {
         Tu navegador no soporta videos HTML5.
       </video>
       
-      <div className="absolute inset-0 bg-gradient-to-b from-[#090f1d] via-transparent to-transparent pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#090f1d] via-[#090f1d]/60 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f18]/80 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f18] via-[#0a0f18]/50 to-transparent pointer-events-none" />
 
+      {/* 1. CENTRADO: justify-center para centrar todo verticalmente */}
       <div ref={textRef} className="relative z-10 flex h-full flex-col items-center justify-center text-center px-5 opacity-0">
         
-        <div className="relative w-48 h-24 sm:w-64 sm:h-28 mb-8 flex items-center justify-center">
-          <Image src="/img/logo-onboard.svg" alt="On Board Logo" fill className="object-contain" priority />
-        </div>
+        <p className="max-w-md text-sm md:text-base text-gray-300 mb-6 mt-10">
+          {t.hero.subtitle}
+        </p>
 
-        <h1 className="font-display text-[clamp(2.5rem,7vw,5rem)] font-bold tracking-tight text-white leading-[1.1]">
+        {/* SOLO CAMBIADO text-white AQUÍ 👇 */}
+        <h1 className="font-display text-[clamp(2.5rem,7vw,5rem)] font-bold tracking-tight text-brand-cream leading-[1.1]">
           {t.hero.title1} <br />
           <span className="text-blue-500">{t.hero.title2}</span>
         </h1>
+
+        <div className="relative w-64 h-28 sm:w-80 sm:h-36 mt-20 mb-16 flex items-center justify-center">
+          <Image src="/img/logo-onboard.svg" alt="On Board Logo" fill className="object-contain" priority />
+        </div>
         
-        <p className="mt-6 max-w-md text-sm md:text-base text-gray-400">
-          {t.hero.subtitle}
-        </p>
-        
-        <a href="#contacto" className="group mt-10 inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-blue-500">
+        {/* 2. BOTÓN NEÓN: SOLO CAMBIADO text-white AQUÍ 👇 */}
+        <a 
+          href="#contacto" 
+          className="group mt-20 inline-flex items-center gap-2 rounded-full bg-blue-600 px-10 py-4 text-base font-semibold text-brand-cream transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.8)] shadow-[0_0_20px_rgba(59,130,246,0.5)]"
+        >
           {t.hero.cta}
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
         </a>
+        
       </div>
     </section>
   );

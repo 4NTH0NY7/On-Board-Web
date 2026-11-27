@@ -26,7 +26,6 @@ export default function Footer() {
                 src="/img/logo-navbar.svg" 
                 alt="On Board Logo" 
                 fill 
-                // Quitamos "object-left" y usamos object-center para que siempre esté centrado
                 className="object-contain object-center sm:object-left" 
               />
             </div>
@@ -36,7 +35,8 @@ export default function Footer() {
             <ul className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
               {LINKS.map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="text-[0.78rem] text-gray-500 transition-colors duration-300 hover:text-white">
+                  {/* SOLO CAMBIADO hover:text-white AQUÍ 👇 */}
+                  <a href={l.href} className="text-[0.78rem] text-gray-500 transition-colors duration-300 hover:text-brand-cream">
                     {l.label}
                   </a>
                 </li>

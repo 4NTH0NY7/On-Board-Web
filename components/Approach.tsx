@@ -14,7 +14,8 @@ export default function Approach() {
               <span className="h-px w-8 bg-blue-500/60" />
               {t.approach.label}
             </span>
-            <h2 className="mt-5 text-balance font-display text-[clamp(1.9rem,5vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-white">
+            {/* SOLO CAMBIADO text-white AQUÍ 👇 */}
+            <h2 className="mt-5 text-balance font-display text-[clamp(1.9rem,5vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-brand-cream">
               {t.approach.title}
             </h2>
           </div>
@@ -29,7 +30,8 @@ export default function Approach() {
                     0{i + 1}
                   </span>
                 </div>
-                <h3 className="font-display text-[1.25rem] font-medium tracking-tight text-white transition-transform duration-500 group-hover:translate-x-1 sm:text-[1.5rem] md:col-span-4">
+                {/* SOLO CAMBIADO text-white AQUÍ 👇 */}
+                <h3 className="font-display text-[1.25rem] font-medium tracking-tight text-brand-cream transition-transform duration-500 group-hover:translate-x-1 sm:text-[1.5rem] md:col-span-4">
                   {step.title}
                 </h3>
                 <p className="max-w-xl text-pretty text-[0.88rem] leading-relaxed text-gray-400 sm:text-[0.95rem] md:col-span-6">

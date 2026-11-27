@@ -8,20 +8,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Fondo general de la web (un negro con un levísimo tinte azulado)
+        // Fondo general de la web (un negro/azul muy oscuro)
         background: "rgb(var(--bg) / <alpha-value>)",
-        // El azul marino profundo del logo (para bordes y tarjetas)
         surface: "rgb(var(--surface) / <alpha-value>)",
-        // Blanco y grises
         ink: "rgb(var(--ink) / <alpha-value>)",
         muted: "rgb(var(--muted) / <alpha-value>)",
+
+        // 🔥 LA PALETA OFICIAL DE ON BOARD
+        brand: {
+          cream: "#edeae1", // El blanco hueso / cremita
+          blue: "#425474",  // El azul acero del logo
+          dark: "#19212f",  // El azul noche profundo
+        },
         
-        // 🔥 AQUÍ ESTÁ LA MAGIA: Sobrescribimos los azules de Tailwind
+        // Mantenemos los azules de Tailwind por si acaso, 
+        // pero ajustados al azul de la marca.
         blue: {
-          400: "#5289BA", // Azul claro (para textos hover)
-          500: "#346595", // Azul Acero / Medio (el de la "o" del logo)
-          600: "#254B70", // Azul Marino (el de la "b" y los botones principales)
-          900: "#0D1B33", // Azul casi negro (el de la base)
+          400: "#5A8DBF",
+          500: "#425474",
+          600: "#355377",
+          900: "#19212f",
         },
       },
       fontFamily: {

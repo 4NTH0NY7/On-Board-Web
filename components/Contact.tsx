@@ -5,7 +5,7 @@ import Reveal from "./Reveal";
 import { Mail, Phone, Clock, ArrowRight, Check, Facebook, Instagram, Youtube } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 
-const INPUT_BASE = "w-full rounded-xl border border-white/[0.08] bg-white/[0.02] px-4 py-3.5 text-sm text-white placeholder:text-gray-600 outline-none transition-all duration-300 focus:border-blue-500/60 focus:bg-white/[0.04] focus:ring-2 focus:ring-blue-500/20";
+const INPUT_BASE = "w-full rounded-xl border border-white/[0.08] bg-white/[0.02] px-4 py-3.5 text-sm text-brand-cream placeholder:text-gray-600 outline-none transition-all duration-300 focus:border-blue-500/60 focus:bg-white/[0.04] focus:ring-2 focus:ring-blue-500/20";
 const LABEL_BASE = "mb-2 block text-[0.65rem] font-medium uppercase tracking-[0.18em] text-gray-500";
 
 export default function Contact() {
@@ -23,19 +23,15 @@ export default function Contact() {
     const service = formData.get("service");
     const message = formData.get("message");
 
-    // DEBUG: Mira en la consola de tu navegador (F12) si estos datos aparecen
     console.log("Datos del formulario:", { name, email, phone, company, service, message });
 
     const waMessage = `Hola On Board, mi nombre es *${name}*.\n\n*Email:* ${email}\n*Teléfono:* ${phone}\n*Empresa:* ${company}\n*Servicio de interés:* ${service}\n\n*Mensaje:*\n${message}`;
     
-    // TU NÚMERO DE WHATSAPP
     const phoneNumber = "16156094031"; 
     const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(waMessage)}`;
     
-    // Abrimos WhatsApp
     const newWindow = window.open(waUrl, "_blank");
     
-    // Si el navegador bloqueó la ventana emergente (newWindow es null), lo abrimos en la misma pestaña
     if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
       window.location.href = waUrl;
     }
@@ -57,7 +53,8 @@ export default function Contact() {
                     <span className="h-px w-8 bg-blue-500/60" />
                     {t.contact.label}
                   </span>
-                  <h2 className="mt-5 text-balance font-display text-[clamp(1.75rem,4.5vw,2.75rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-white">
+                  {/* SOLO CAMBIADO text-white AQUÍ 👇 */}
+                  <h2 className="mt-5 text-balance font-display text-[clamp(1.75rem,4.5vw,2.75rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-brand-cream">
                     {t.contact.title1} <br /> {t.contact.title2}
                   </h2>
                   <p className="mt-4 max-w-sm text-pretty text-[0.9rem] leading-relaxed text-gray-400">
@@ -68,7 +65,7 @@ export default function Contact() {
                 <div className="relative">
                   <ul className="space-y-4">
                     <li>
-                      <a href="tel:+16156094031" className="group flex items-center gap-3 text-sm text-gray-400 transition-colors hover:text-white">
+                      <a href="tel:+16156094031" className="group flex items-center gap-3 text-sm text-gray-400 transition-colors hover:text-brand-cream">
                         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-blue-500 transition-colors group-hover:border-blue-500/40">
                           <Phone className="h-4 w-4" strokeWidth={1.75} />
                         </span>
@@ -76,7 +73,7 @@ export default function Contact() {
                       </a>
                     </li>
                     <li>
-                      <a href="mailto:info@onboardteam.com" className="group flex items-center gap-3 text-sm text-gray-400 transition-colors hover:text-white">
+                      <a href="mailto:info@onboardteam.com" className="group flex items-center gap-3 text-sm text-gray-400 transition-colors hover:text-brand-cream">
                         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-blue-500 transition-colors group-hover:border-blue-500/40">
                           <Mail className="h-4 w-4" strokeWidth={1.75} />
                         </span>
@@ -108,7 +105,8 @@ export default function Contact() {
                     <span className="flex h-14 w-14 items-center justify-center rounded-full border border-blue-500/40 bg-blue-500/10 text-blue-500">
                       <Check className="h-6 w-6" strokeWidth={2} />
                     </span>
-                    <h3 className="mt-6 font-display text-xl font-semibold text-white">{t.contact.form.sending}</h3>
+                    {/* SOLO CAMBIADO text-white AQUÍ 👇 */}
+                    <h3 className="mt-6 font-display text-xl font-semibold text-brand-cream">{t.contact.form.sending}</h3>
                     <p className="mt-2 max-w-xs text-sm leading-relaxed text-gray-400">{t.contact.form.sendingDesc}</p>
                   </div>
                 ) : (
@@ -149,7 +147,8 @@ export default function Contact() {
                       <textarea id="message" name="message" required rows={4} placeholder={t.contact.form.messagePlace} className={`${INPUT_BASE} resize-none`} />
                     </div>
 
-                    <button type="submit" className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_45px_-14px_rgba(59,130,246,0.9)] transition-all duration-300 hover:bg-blue-500 sm:w-auto">
+                    {/* SOLO CAMBIADO text-white AQUÍ 👇 */}
+                    <button type="submit" className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-sm font-semibold text-brand-cream shadow-[0_0_45px_-14px_rgba(59,130,246,0.9)] transition-all duration-300 hover:bg-blue-500 sm:w-auto">
                       {t.contact.form.send}
                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
                     </button>

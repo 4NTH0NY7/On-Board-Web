@@ -43,12 +43,11 @@ export default function Navbar() {
         
         <Link href="/" className="group flex items-center" aria-label="On Board — Inicio">
           <div className="relative h-7 w-28 sm:h-8 sm:w-32">
-            {/* LOGO ACTUALIZADO AQUÍ */}
             <Image src="/img/logo-navbar.svg" alt="On Board Logo" fill className="object-contain object-left" priority />
           </div>
         </Link>
 
-        {/* Links desktop (Aumentados a text-[0.95rem]) */}
+        {/* Links desktop */}
         <ul className="hidden items-center gap-9 lg:flex">
           {LINKS.map((l) => (
             <li key={l.href}>
@@ -57,7 +56,7 @@ export default function Navbar() {
                 className="group relative text-[0.95rem] font-medium tracking-wide text-muted transition-colors duration-300 hover:text-ink"
               >
                 {l.label}
-                <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-blue-500 transition-all duration-300 group-hover:w-full" />
               </Link>
             </li>
           ))}
@@ -70,7 +69,8 @@ export default function Navbar() {
           <div className="relative">
             <button 
               onClick={() => setLangMenu(!langMenu)}
-              className="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition-colors border border-white/10 bg-white/[0.03] px-3 py-1.5 rounded-full"
+              /* SOLO CAMBIADO text-white AQUÍ 👇 */
+              className="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-brand-cream transition-colors border border-white/10 bg-white/[0.03] px-3 py-1.5 rounded-full"
             >
               <Globe className="h-4 w-4" />
               <span className="uppercase">{language === "es" ? "ES" : "EN"}</span>
@@ -96,9 +96,9 @@ export default function Navbar() {
             )}
           </div>
           
-          <Link href="/#contacto" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-[0.8rem] font-medium text-ink transition-all duration-300 hover:border-accent/50 hover:bg-accent/10">
+          <Link href="/#contacto" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-[0.8rem] font-medium text-ink transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/10">
             {t.nav.cta}
-            <ArrowUpRight className="h-3.5 w-3.5 text-accent" strokeWidth={2} />
+            <ArrowUpRight className="h-3.5 w-3.5 text-blue-500" strokeWidth={2} />
           </Link>
         </div>
 
@@ -143,7 +143,8 @@ export default function Navbar() {
               </button>
             </div>
 
-            <Link href="/#contacto" onClick={() => setOpen(false)} className="flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-[0_0_40px_-10px_rgba(59,130,246,0.8)]">
+            {/* SOLO CAMBIADO text-white AQUÍ 👇 y accent por blue-600 */}
+            <Link href="/#contacto" onClick={() => setOpen(false)} className="flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-6 py-3.5 text-sm font-semibold text-brand-cream shadow-[0_0_40px_-10px_rgba(59,130,246,0.8)]">
               {t.hero.cta}
               <ArrowUpRight className="h-4 w-4" />
             </Link>
