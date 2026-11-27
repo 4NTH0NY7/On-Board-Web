@@ -36,7 +36,7 @@ export default function Hero() {
       <div ref={textRef} className="relative z-10 flex h-full flex-col items-center justify-center text-center px-5 opacity-0">
         
         <div className="relative w-48 h-24 sm:w-64 sm:h-28 mb-8 flex items-center justify-center">
-          <Image src="/img/logo-onboard2.svg" alt="On Board Logo" fill className="object-contain" priority />
+          <Image src="/img/logo-onboard.svg" alt="On Board Logo" fill className="object-contain" priority />
         </div>
 
         <h1 className="font-display text-[clamp(2.5rem,7vw,5rem)] font-bold tracking-tight text-white leading-[1.1]">

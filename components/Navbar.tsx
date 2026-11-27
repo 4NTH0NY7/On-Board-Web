@@ -44,7 +44,7 @@ export default function Navbar() {
         <Link href="/" className="group flex items-center" aria-label="On Board — Inicio">
           <div className="relative h-7 w-28 sm:h-8 sm:w-32">
             {/* LOGO ACTUALIZADO AQUÍ */}
-            <Image src="/img/logo-navbar2.svg" alt="On Board Logo" fill className="object-contain object-left" priority />
+            <Image src="/img/logo-navbar.svg" alt="On Board Logo" fill className="object-contain object-left" priority />
           </div>
         </Link>
 

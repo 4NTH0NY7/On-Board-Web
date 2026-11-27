@@ -23,7 +23,7 @@ export default function Footer() {
           <Link href="#" className="flex items-center justify-center w-full sm:w-auto">
             <div className="relative h-7 w-28 sm:h-8 sm:w-32">
               <Image 
-                src="/img/logo-navbar2.svg" 
+                src="/img/logo-navbar.svg" 
                 alt="On Board Logo" 
                 fill 
                 // Quitamos "object-left" y usamos object-center para que siempre esté centrado

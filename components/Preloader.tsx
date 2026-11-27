@@ -33,7 +33,7 @@ export default function Preloader() {
         
         <div className="relative w-56 h-28 sm:w-72 sm:h-36 flex items-center justify-center">
           <Image 
-            src="/img/logo-onboard2.svg" 
+            src="/img/logo-onboard.svg" 
             alt="On Board Logo" 
             fill
             className="object-contain"
